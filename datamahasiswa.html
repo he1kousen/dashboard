@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard Data Mahasiswa</title>
+
+    <!-- Custom fonts and styles for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        /* Custom table styling */
+        .table-hover tbody tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .table thead th {
+            color: white;
+            background-color: #4e73df;
+        }
+
+        .btn-custom {
+            background-color: #1cc88a;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #17a673;
+        }
+
+        .container-fluid h1 {
+            color: #4e73df;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SB Admin 2</div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Dashboard Nav Item -->
+            <li class="nav-item active">
+                <a class="nav-link" href="datamahasiswa.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Data Mahasiswa</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+        </ul>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </nav>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Data Mahasiswa</h1>
+
+                    <!-- Add New Student Button -->
+                    <button class="btn btn-custom mb-4" data-toggle="modal" data-target="#addStudentModal">
+                        <i class="fas fa-plus"></i> Tambah Data Mahasiswa
+                    </button>
+
+                    <!-- Data Table -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Daftar Mahasiswa</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nama</th>
+                                            <th>NIM</th>
+                                            <th>Jurusan</th>
+                                            <th>Semester</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Data mahasiswa yang di-generate -->
+                                        <tr>
+                                            <td>Andi Setiawan</td>
+                                            <td>123456789</td>
+                                            <td>Teknik Informatika</td>
+                                            <td>5</td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm">Edit</button>
+                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sarah Lestari</td>
+                                            <td>987654321</td>
+                                            <td>Sistem Informasi</td>
+                                            <td>3</td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm">Edit</button>
+                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Tambah data mahasiswa lain di sini -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+                <!-- Modal Tambah Data Mahasiswa -->
+                <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addStudentModalLabel">Tambah Data Mahasiswa</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nama">Nama</label>
+                                        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama mahasiswa">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nim">NIM</label>
+                                        <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jurusan">Jurusan</label>
+                                        <input type="text" class="form-control" id="jurusan" placeholder="Masukkan jurusan">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="semester">Semester</label>
+                                        <input type="number" class="form-control" id="semester" placeholder="Masukkan semester">
+                                    </div>
+                                    <button type="submit" class="btn btn-custom">Simpan</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2024</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+</html>
